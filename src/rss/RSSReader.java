@@ -79,10 +79,10 @@ public class RSSReader {
                 } else if (event.isEndElement()) {
                     if (event.asEndElement().getName().getLocalPart() == (ITEM)) {
                         FeedItem item = new FeedItem(title);
-                        item.description = description;
-                        item.link = link;
-                        item.pubDate = pubDate;
-                        feed.feedItems.add(item);
+                        item.setDescription(description);
+                        item.setLink(link);
+                        item.setPubDate(pubDate);
+                        feed.addFeedItem(item);
 
                         event = eventReader.nextEvent();
                         continue;

@@ -4,25 +4,23 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /** Az RSS folyamhoz tartozó kötelező, ill. opcionális propertyk */
 
 public class Feed {
-    ArrayList<FeedItem> feedItems = new ArrayList<>();
+    private ArrayList<FeedItem> feedItems = new ArrayList<>();
 
     // Kötelező
-    String title;
-    String link;
-    String description;
-    String feedCategory;
+    private String title;
+    private String link;
+    private String description;
+    private String feedCategory;
 
     // Opcionális
-    Date pubDate;
-    //FeedImage image;
-    //String language;
+    private Date pubDate;
+    private String imageUrl;  // A feedhez csatolt kép URL címe
     //String copyright;
-    //String category;
-    //Integer ttl;
 
     public String getTitle() {
         return title;
@@ -60,10 +58,15 @@ public class Feed {
 
     public void setFeedCategory(String feedCategory) { this.feedCategory = feedCategory;};
 
+    public String getImageUrl() { return imageUrl; }
+
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 
     public ArrayList<FeedItem> getFeedItems(){
         return feedItems;
     }
+
+    public void addFeedItem(FeedItem feedItem) { this.feedItems.add(feedItem); }
 
     public Feed(String title, String link, String description) {
         this.title = title;
