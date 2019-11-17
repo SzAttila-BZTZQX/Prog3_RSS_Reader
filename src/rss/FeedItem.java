@@ -7,6 +7,8 @@ import java.util.Date;
 /** RSS folyamokhoz tartozó hírek */
 
 public class FeedItem {
+    private Integer id;
+
     //Kötelező
     private String title;
 
@@ -16,7 +18,7 @@ public class FeedItem {
     private Date pubDate;
     //FeedItemEnclosure enclosure;    //A híhez csatolt média objektum
     //String guid;                  //Egy String ami egyedileg azonosítja a hírt
-    //URL source;                   //A hírt tartalmazó RSS csatorna
+
 
     public String getTitle() {
         return title;
@@ -49,7 +51,29 @@ public class FeedItem {
     }
 
 
+    public FeedItem(){
+
+    }
+
     public FeedItem(String title){
         this.title = title;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == this) {
+            return true;
+        }
+
+        if (!(obj instanceof FeedItem)){
+            return false;
+        }
+
+        if(((FeedItem) obj).title == title && ((FeedItem) obj).pubDate.compareTo(pubDate) == 0 ){
+            return true;
+        }
+
+        return false;
     }
 }

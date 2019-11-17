@@ -2,25 +2,33 @@ package rss;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /** Az RSS folyamhoz tartozó kötelező, ill. opcionális propertyk */
 
 public class Feed {
+    private Integer id;
+    private Integer categoryId;
+    private String feedCategory;
+    private String favIconUrl;  // A feedhez csatolt kép URL címe
     private ArrayList<FeedItem> feedItems = new ArrayList<>();
 
     // Kötelező
     private String title;
     private String link;
     private String description;
-    private String feedCategory;
 
     // Opcionális
-    private Date pubDate;
-    private String imageUrl;  // A feedhez csatolt kép URL címe
-    //String copyright;
+    private Date pubDate;   // A legújabb hírhez tartozó dátum
+
+
+    public Integer getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
+
+    public Integer getCategoryId() { return categoryId; }
+
+    public void setCategoryId(int id) { this.categoryId = categoryId; }
 
     public String getTitle() {
         return title;
@@ -47,7 +55,11 @@ public class Feed {
     }
 
     public Date getPubDate() {
-        return pubDate;
+        //return pubDate;
+
+        // A legújabb feedItem dátuma
+        FeedItem feedItem = feedItems.stream().max(Comparator.comparing(FeedItem::getPubDate)).orElseThrow(NoSuchElementException::new);
+        return feedItem.getPubDate();
     }
 
     public void setPubDate(Date pubDate) {
@@ -58,9 +70,9 @@ public class Feed {
 
     public void setFeedCategory(String feedCategory) { this.feedCategory = feedCategory;};
 
-    public String getImageUrl() { return imageUrl; }
+    public String getFavIconUrl() { return favIconUrl; }
 
-    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    public void setFavIconUrl(String imageUrl) { this.favIconUrl = imageUrl; }
 
     public ArrayList<FeedItem> getFeedItems(){
         return feedItems;
@@ -68,11 +80,27 @@ public class Feed {
 
     public void addFeedItem(FeedItem feedItem) { this.feedItems.add(feedItem); }
 
-    public Feed(String title, String link, String description) {
+
+    public Feed(){
+    }
+
+    public Feed(String title, String link, String description){
         this.title = title;
         this.link = link;
         this.description = description;
+    }
+
+    public Feed(String title, String link, String description, Date pubDate) {
+        this.title = title;
+        this.link = link;
+        this.description = description;
+        this.pubDate = pubDate;
 
         //Date date = feedItems.stream().max((p1, p2) -> (p1.getPubDate() - p2.getPubDate())).get();
+    }
+
+    @Override
+    public String toString() {
+        return title + ", " + link + "," + description + "," + pubDate;
     }
 }
