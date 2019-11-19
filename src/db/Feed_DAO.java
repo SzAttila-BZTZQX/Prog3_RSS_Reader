@@ -44,12 +44,12 @@ public class Feed_DAO {
 
     public boolean insertFeed(Feed feed){
         try (Connection connection = DBConnector.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Feed VALUES (NULL, NULL, ?, ?, ?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Feed VALUES (NULL, NULL, ?, ?, ?, ?, ?)");
 
             preparedStatement.setString(1, feed.getTitle());
             preparedStatement.setString(2, feed.getLink());
             preparedStatement.setString(3, feed.getDescription());
-            preparedStatement.setDate(4, (Date) feed.getPubDate());
+            preparedStatement.setString(4, feed.getPubDate().toString());
             preparedStatement.setString(5, feed.getFavIconUrl());
             int i = preparedStatement.executeUpdate();
 
@@ -69,7 +69,7 @@ public class Feed_DAO {
             preparedStatement.setString(1, feed.getTitle());
             preparedStatement.setString(2, feed.getLink());
             preparedStatement.setString(3, feed.getDescription());
-            preparedStatement.setDate(4, (Date) feed.getPubDate());
+            preparedStatement.setString(4, feed.getPubDate().toString());
             preparedStatement.setString(5, feed.getFavIconUrl());
             int i = preparedStatement.executeUpdate();
 
@@ -104,7 +104,7 @@ public class Feed_DAO {
         feed.setTitle( resultSet.getString("Title") );
         feed.setLink( resultSet.getString("Link") );
         feed.setDescription( resultSet.getString("Description") );
-        feed.setPubDate( resultSet.getDate("PubDate") );
+        feed.setPubDate( resultSet.getString("PubDate") );
         feed.setFavIconUrl( resultSet.getString("FavIconUrl"));
 
         return feed;

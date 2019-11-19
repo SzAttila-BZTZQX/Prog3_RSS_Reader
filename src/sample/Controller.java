@@ -1,5 +1,7 @@
 package sample;
 
+import db.DBConnector;
+import db.Feed_DAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
@@ -22,13 +24,20 @@ public class Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        RSSReader reader = new RSSReader("https://news.google.com/rss?x=1571747254.2933&hl=en-US&gl=US&ceid=US:en");
-        Feed feed = reader.readFeed();
+//        DateFormat df = new SimpleDateFormat("EEE, d MMM yyy HH:mm:ss Z", Locale.US);
+//        String sdate = "Sun, 17 Nov 2019 18:15:42 +0000";
+//        Date date = feed.getPubDate();
+//        System.out.println(df.format(date));
 
-        System.out.println(feed.getPubDate());
+
     }
 
     public void getFeedData(MouseEvent mouseEvent) {
+        RSSReader reader = new RSSReader(feedUrl.getText());
+        Feed feed = reader.readFeed();
 
+        System.out.println(feed.getTitle());
+        //Feed_DAO feed_dao = new Feed_DAO();
+        //feed_dao.insertFeed(feed);
     }
 }

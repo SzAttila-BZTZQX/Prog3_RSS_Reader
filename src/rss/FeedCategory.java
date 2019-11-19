@@ -32,6 +32,11 @@ public class FeedCategory {
         feeds.add(feed);
     }
 
+
+    public FeedCategory() {
+
+    }
+
     public FeedCategory(String name){
         this.name = name;
     }

@@ -2,6 +2,9 @@ package rss;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /** Az RSS folyamhoz tartozó kötelező, ill. opcionális propertyk */
@@ -54,16 +57,27 @@ public class Feed {
         this.description = description;
     }
 
-    public Date getPubDate() {
+    public String getPubDate() {
         //return pubDate;
 
         // A legújabb feedItem dátuma
-        FeedItem feedItem = feedItems.stream().max(Comparator.comparing(FeedItem::getPubDate)).orElseThrow(NoSuchElementException::new);
-        return feedItem.getPubDate();
+        FeedItem feedItem = feedItems.stream().max(Comparator.comparing(FeedItem::getPubDate)).orElse(feedItems.get(0));
+        DateFormat dateFormat = new SimpleDateFormat("E, d MMM y HH:mm:ss Z", Locale.US);
+        return dateFormat.format(feedItem.getPubDate());
     }
 
     public void setPubDate(Date pubDate) {
         this.pubDate = pubDate;
+    }
+
+    public void setPubDate(String pubDate){
+        DateFormat dateFormat = new SimpleDateFormat("E, d MMM y HH:mm:ss Z", Locale.US);
+        try{
+            Date date = dateFormat.parse(pubDate);
+            this.pubDate = date;
+        } catch (ParseException ex){
+            System.out.printf(ex.getMessage());
+        }
     }
 
     public String getFeedCategory() {return feedCategory;}

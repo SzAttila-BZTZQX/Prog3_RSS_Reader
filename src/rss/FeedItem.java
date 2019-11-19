@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class FeedItem {
     private Integer id;
+    private Integer feedId;
 
     //Kötelező
     private String title;
@@ -19,6 +20,22 @@ public class FeedItem {
     //FeedItemEnclosure enclosure;    //A híhez csatolt média objektum
     //String guid;                  //Egy String ami egyedileg azonosítja a hírt
 
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getFeedId() {
+        return feedId;
+    }
+
+    public void setFeedId(Integer feedId) {
+        this.feedId = feedId;
+    }
 
     public String getTitle() {
         return title;

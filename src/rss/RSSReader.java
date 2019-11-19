@@ -89,8 +89,13 @@ public class RSSReader {
                     }
                 }
             }
+            inputStream.close();
+            eventReader.close();
+
         } catch (XMLStreamException ex) {
             throw new RuntimeException(ex);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return feed;
     }
@@ -113,7 +118,7 @@ public class RSSReader {
     }
 
     private Date convertToDate(String data) {
-        DateFormat dateFormat = new SimpleDateFormat("E, d MMM y HH:mm:ss Z", Locale.ENGLISH);
+        DateFormat dateFormat = new SimpleDateFormat("E, d MMM y HH:mm:ss Z", Locale.US);
         Date result = null;
         try {
             result =  dateFormat.parse(data);
