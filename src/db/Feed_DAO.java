@@ -1,6 +1,7 @@
 package db;
 
 import rss.Feed;
+import rss.FeedCategory;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,10 +13,11 @@ public class Feed_DAO {
     public Feed getFeed(int id){
         try (Connection connection = DBConnector.getConnection()){
             try (Statement statement = connection.createStatement()){
-                ResultSet resultSet = statement.executeQuery("SELECT * FROM Feed WHERE ID=" + id);
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM Feed WHERE FeedID=" + id);
 
                 if(resultSet.next()){
                     Feed feed = getFeedFromResultSet(resultSet);
+                    return feed;
                 }
             }
         } catch (SQLException ex) {
@@ -29,7 +31,7 @@ public class Feed_DAO {
             try (Statement statement = connection.createStatement()) {
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM Feed");
 
-                List<Feed> feeds = new ArrayList<Feed>();
+                List<Feed> feeds = new ArrayList<>();
                 while(resultSet.next()){
                     Feed feed = getFeedFromResultSet(resultSet);
                     feeds.add(feed);
@@ -38,6 +40,24 @@ public class Feed_DAO {
             }
         } catch (SQLException ex){
             ex.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<Feed> getAllFeedByCategory(FeedCategory category){
+        try(Connection connection = DBConnector.getConnection()){
+            try(Statement statement = connection.createStatement()){
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM Feed WHERE CategoryID=" + category.getId());
+
+                List<Feed> feeds = new ArrayList<>();
+                while(resultSet.next()){
+                    Feed feed = getFeedFromResultSet(resultSet);
+                    feeds.add(feed);
+                }
+                return feeds;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return null;
     }
@@ -64,7 +84,7 @@ public class Feed_DAO {
 
     public boolean updateFeed(Feed feed) {
         try (Connection connection = DBConnector.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Feed SET Title=?, Link=?, Description=?, PubDate=?, FavIconUrl=? WHERE ID=" + feed.getId());
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Feed SET Title=?, Link=?, Description=?, PubDate=?, FavIconUrl=? WHERE FeedID=" + feed.getId());
 
             preparedStatement.setString(1, feed.getTitle());
             preparedStatement.setString(2, feed.getLink());
@@ -82,12 +102,12 @@ public class Feed_DAO {
         return false;
     }
 
-    public boolean deleteFeed(int id) {
+    public boolean deleteFeed(Feed feed) {
         try (Connection connection = DBConnector.getConnection()){
             try (Statement statement = connection.createStatement()){
-                int i = statement.executeUpdate("DELETE FROM Feed WHERE ID=" + id);
+                int i = statement.executeUpdate("DELETE FROM Feed WHERE FeedID=" + feed.getId());
 
-                if(id == 1){
+                if(feed.getId() == 1){
                     return true;
                 }
             }
@@ -97,10 +117,27 @@ public class Feed_DAO {
         return false;
     }
 
+    public boolean addToCategory(Feed feed, FeedCategory category){
+        try(Connection connection = DBConnector.getConnection()){
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Feed SET CategoryID=? WHERE FeedID=" + feed.getId());
+            preparedStatement.setInt( 1, category.getId());
+
+            int i = preparedStatement.executeUpdate();
+
+            if(i == 1){
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
     private Feed getFeedFromResultSet(ResultSet resultSet) throws SQLException {
         Feed feed = new Feed();
 
+        feed.setId( resultSet.getInt("FeedID") );
         feed.setTitle( resultSet.getString("Title") );
         feed.setLink( resultSet.getString("Link") );
         feed.setDescription( resultSet.getString("Description") );

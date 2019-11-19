@@ -1,12 +1,13 @@
 package rss;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FeedCategory {
 
     private Integer id;
     private String name;
-    private ArrayList<Feed> feeds = new ArrayList<>();
+    private List<Feed> feeds = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -24,12 +25,12 @@ public class FeedCategory {
         this.name = name;
     }
 
-    public ArrayList<Feed> getFeeds() {
+    public List<Feed> getFeeds() {
         return feeds;
     }
 
-    public void addFeed(Feed feed) {
-        feeds.add(feed);
+    public void addFeeds(List<Feed> feeds) {
+        feeds.addAll(feeds);
     }
 
 

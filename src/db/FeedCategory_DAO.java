@@ -1,5 +1,6 @@
 package db;
 
+import rss.Feed;
 import rss.FeedCategory;
 
 import java.sql.*;
@@ -33,6 +34,10 @@ public class FeedCategory_DAO {
                     FeedCategory category = new FeedCategory();
                     category.setId( resultSet.getInt("ID") );
                     category.setName( resultSet.getString("Name"));
+
+                    Feed_DAO feed_dao = new Feed_DAO();
+                    category.addFeeds(feed_dao.getAllFeedByCategory(category));
+
                     categories.add(category);
                 }
                 return categories;
@@ -46,7 +51,7 @@ public class FeedCategory_DAO {
     public boolean insertCategory(FeedCategory category) {
         try(Connection connection = DBConnector.getConnection()){
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Category VALUES (NULL, ?)");
-            preparedStatement.setString(0, category.getName());
+            preparedStatement.setString(1, category.getName());
             int i = preparedStatement.executeUpdate();
             if (i == 1){ return true; }
         } catch (SQLException e) {
@@ -58,7 +63,7 @@ public class FeedCategory_DAO {
     public boolean updateCategory(FeedCategory category){
         try(Connection connection = DBConnector.getConnection()){
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Category SET Name=? WHERE ID=" + category.getId());
-            preparedStatement.setString( 0, category.getName() );
+            preparedStatement.setString( 1, category.getName() );
             int i = preparedStatement.executeUpdate();
             if(i == 1) { return true; }
         } catch (SQLException e) {
