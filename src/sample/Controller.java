@@ -36,7 +36,7 @@ public class Controller implements Initializable {
         RSSReader reader = new RSSReader(feedUrl.getText());
         feed = reader.readFeed();
 
-        System.out.println(feed.getTitle());
+        System.out.println(feed.getFeedItems().get(0).getDescription());
         //Feed_DAO feed_dao = new Feed_DAO();
         //feed_dao.insertFeed(feed);
 

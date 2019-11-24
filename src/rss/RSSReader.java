@@ -24,6 +24,7 @@ public class RSSReader {
     final String LINK = "link";
     final String ITEM = "item";
     final String PUB_DATE = "pubDate";
+    final String CONTENT = "encoded";
 
     final URL url;
 
@@ -44,6 +45,7 @@ public class RSSReader {
             String title = "";
             String link = "";
             Date pubDate = null;
+            String content = "";
 
             XMLInputFactory inputFactory = XMLInputFactory.newInstance();
             InputStream inputStream = readStream();
@@ -53,7 +55,6 @@ public class RSSReader {
                 XMLEvent event = eventReader.nextEvent();
                 if(event.isStartElement()) {
                     String localPart = event.asStartElement().getName().getLocalPart();
-
                     switch (localPart){
                         case ITEM:
                             if(isFeedHeader) {
@@ -67,6 +68,9 @@ public class RSSReader {
                             break;
                         case DESC:
                             description = getCharacterData(event, eventReader);
+                            break;
+                        case CONTENT:
+                            content = getCharacterData(event, eventReader);
                             break;
                         case LINK:
                             link = getCharacterData(event, eventReader);

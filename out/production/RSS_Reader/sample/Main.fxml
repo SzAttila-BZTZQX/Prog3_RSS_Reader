@@ -13,7 +13,6 @@
             <Button onMouseClicked="#getFeedData">Get</Button>
             <TextField fx:id="categoryName"/>
             <Button onMouseClicked="#setCategory">Set</Button>
-
         </VBox>
     </children>
 </GridPane>

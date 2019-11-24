@@ -17,6 +17,7 @@ public class FeedItem {
     private String link;
     private String description;
     private Date pubDate;
+    private String content;
     //FeedItemEnclosure enclosure;    //A híhez csatolt média objektum
     //String guid;                  //Egy String ami egyedileg azonosítja a hírt
 

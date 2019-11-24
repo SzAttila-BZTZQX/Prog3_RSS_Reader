@@ -117,4 +117,9 @@ public class Feed {
     public String toString() {
         return title + ", " + link + "," + description + "," + pubDate;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }
