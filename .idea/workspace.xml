@@ -2,21 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="SQLite szerver hozzáadása&#10;Szerver Connection Factory&#10;Feed, FeedItem osztályok pontosítása">
-      <change afterPath="$PROJECT_DIR$/src/css/FeedItemControl.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/css/MainWindow.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/FeedItemControl.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/FeedItemControl_Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/MainWindow.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/MainWindow_Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FETCH_HEAD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/rss/Feed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RSS_Reader/rss/Feed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/rss/FeedItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RSS_Reader/rss/FeedItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/rss/RSSReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RSS_Reader/rss/RSSReader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/css/FeedItemControl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/css/MainWindow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/db/DBConnector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/db/FeedCategory_DAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/db/FeedItem_DAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/db/Feed_DAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RSS_Reader/sample/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/sample/FeedItemControl.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/sample/FeedItemControl_Controller.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/RSS_Reader/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/sample/Main.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/Feed_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/Feed_DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/sample/MainWindow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/RSS_Reader/sample/MainWindow_Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/FeedItemControl.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/resources/css/FeedItemControl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/MainWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/resources/css/MainWindow.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/DBConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/java/db/DBConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/FeedCategory_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/java/db/FeedCategory_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/FeedItem_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/java/db/FeedItem_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/Feed_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/java/db/Feed_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/FeedItemControl.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/resources/views/FeedItemControl.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/FeedItemControl_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/java/controllers/FeedItemControl_Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/resources/views/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/MainWindow_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/java/controllers/MainWindow_Controller.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -114,6 +126,11 @@
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DonTerez\IdeaProjects\RSS_Reader\src\sample\resources\views" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -151,7 +168,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sample.*" />
+          <option name="PATTERN" value="sample.java.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

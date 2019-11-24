@@ -1,4 +1,4 @@
-package db;
+package sample.java.db;
 
 import rss.Feed;
 import rss.FeedCategory;

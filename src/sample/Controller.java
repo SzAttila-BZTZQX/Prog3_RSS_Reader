@@ -1,22 +1,16 @@
 package sample;
 
-import db.DBConnector;
-import db.FeedCategory_DAO;
-import db.Feed_DAO;
+import sample.java.db.FeedCategory_DAO;
+import sample.java.db.Feed_DAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import rss.Feed;
 import rss.FeedCategory;
-import rss.FeedItem;
 import rss.RSSReader;
 
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Controller implements Initializable {
