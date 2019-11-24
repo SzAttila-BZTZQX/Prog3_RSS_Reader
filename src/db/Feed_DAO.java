@@ -10,7 +10,7 @@ import java.util.List;
 /** Feed Data Acces Object */
 
 public class Feed_DAO {
-    public Feed getFeed(int id){
+    public static Feed getFeed(int id){
         try (Connection connection = DBConnector.getConnection()){
             try (Statement statement = connection.createStatement()){
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM Feed WHERE FeedID=" + id);
@@ -26,7 +26,7 @@ public class Feed_DAO {
         return null;
     }
 
-    public List<Feed> getAllFeed(){
+    public static List<Feed> getAllFeed(){
         try (Connection connection = DBConnector.getConnection()) {
             try (Statement statement = connection.createStatement()) {
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM Feed");
@@ -44,7 +44,7 @@ public class Feed_DAO {
         return null;
     }
 
-    public List<Feed> getAllFeedByCategory(FeedCategory category){
+    public static List<Feed> getAllFeedByCategory(FeedCategory category){
         try(Connection connection = DBConnector.getConnection()){
             try(Statement statement = connection.createStatement()){
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM Feed WHERE CategoryID=" + category.getId());
@@ -62,7 +62,7 @@ public class Feed_DAO {
         return null;
     }
 
-    public boolean insertFeed(Feed feed){
+    public static boolean insertFeed(Feed feed){
         try (Connection connection = DBConnector.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Feed VALUES (NULL, NULL, ?, ?, ?, ?, ?)");
 
@@ -82,7 +82,7 @@ public class Feed_DAO {
         return false;
     }
 
-    public boolean updateFeed(Feed feed) {
+    public static boolean updateFeed(Feed feed) {
         try (Connection connection = DBConnector.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Feed SET Title=?, Link=?, Description=?, PubDate=?, FavIconUrl=? WHERE FeedID=" + feed.getId());
 
@@ -102,7 +102,7 @@ public class Feed_DAO {
         return false;
     }
 
-    public boolean deleteFeed(Feed feed) {
+    public static boolean deleteFeed(Feed feed) {
         try (Connection connection = DBConnector.getConnection()){
             try (Statement statement = connection.createStatement()){
                 int i = statement.executeUpdate("DELETE FROM Feed WHERE FeedID=" + feed.getId());
@@ -117,7 +117,7 @@ public class Feed_DAO {
         return false;
     }
 
-    public boolean addToCategory(Feed feed, FeedCategory category){
+    public static boolean addToCategory(Feed feed, FeedCategory category){
         try(Connection connection = DBConnector.getConnection()){
             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Feed SET CategoryID=? WHERE FeedID=" + feed.getId());
             preparedStatement.setInt( 1, category.getId());
@@ -134,7 +134,7 @@ public class Feed_DAO {
     }
 
 
-    private Feed getFeedFromResultSet(ResultSet resultSet) throws SQLException {
+    private static Feed getFeedFromResultSet(ResultSet resultSet) throws SQLException {
         Feed feed = new Feed();
 
         feed.setId( resultSet.getInt("FeedID") );

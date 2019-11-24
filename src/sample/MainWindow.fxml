@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../css/MainWindow.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MainWindow_Controller">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <SplitPane dividerPositions="0.4955456570155902" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane maxWidth="500.0" minHeight="0.0" minWidth="300.0" prefHeight="698.0" prefWidth="350.0">
+                     <children>
+                        <ScrollPane fitToWidth="true" prefHeight="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox fx:id="feedItemContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+              </items>
+            </SplitPane>
+         </center>
+         <left>
+            <BorderPane prefHeight="700.0" prefWidth="350.0" style="-fx-border-color: #000000; -fx-border-width: 0 2 0 0;" BorderPane.alignment="CENTER">
+               <bottom>
+                  <HBox prefHeight="34.0" prefWidth="350.0" style="-fx-background-color: #272727;" styleClass="left-menu" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="132.0" prefWidth="220.0" style="-fx-background-color: #383838; -fx-border-width: 0 1 0 0; -fx-border-color: #222222;" text="+" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font></Button>
+                        <Button alignment="CENTER" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="132.0" prefWidth="220.0" style="-fx-background-color: #383838;" text="-">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </bottom>
+               <top>
+                  <VBox prefHeight="171.0" prefWidth="350.0" styleClass="left-menu" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="43.0" prefWidth="354.0" style="-fx-border-color: #000000; -fx-border-width: 0 0 1 0;" text="+ Feed Hozzáadása">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <VBox prefHeight="160.0" prefWidth="350.0">
+                           <children>
+                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="144.0" prefWidth="380.0" text="Mind">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="380.0" text="Olvasatlan">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button alignment="BASELINE_LEFT" layoutX="10.0" layoutY="75.0" mnemonicParsing="false" prefHeight="144.0" prefWidth="380.0" text="Olvasott">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </top>
+               <center>
+                  <VBox maxWidth="1.7976931348623157E308" prefHeight="477.0" prefWidth="350.0" style="-fx-border-color: #000000; -fx-border-width: 1 0 0 0;" styleClass="left-menu" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="45.0" prefWidth="300.0" text="Összes Kategória" VBox.vgrow="ALWAYS" />
+                        <TreeView fx:id="treeView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="447.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </left>
+      </BorderPane>
+   </children>
+</AnchorPane>

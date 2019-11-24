@@ -1,0 +1,28 @@
+.hbox {
+    -fx-border-color: #000000;
+    -fx-border-width: 0 0 1 0;
+}
+
+.hboxLight .rssTitle{
+    -fx-text-fill: #DADADA;
+}
+
+.hboxLightRead {
+    -fx-background-color: #c2c2c2;
+}
+
+.hbox .label {
+    -fx-text-fill: #767676;
+}
+
+.hboxDark {
+    -fx-background-color: #121212;
+    -fx-text-fill: #DADADA;
+}
+
+.hboxDark .rssTitle{
+    -fx-text-fill: #DADADA;
+}
+
+
+
