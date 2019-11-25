@@ -1,7 +1,5 @@
-package rss;
+package sample.java.rss;
 
-import java.net.URL;
-import java.text.DateFormat;
 import java.util.Date;
 
 /** RSS folyamokhoz tartozó hírek */

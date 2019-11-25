@@ -6,9 +6,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import rss.Feed;
-import rss.FeedCategory;
-import rss.RSSReader;
+import sample.java.rss.Feed;
+import sample.java.rss.FeedCategory;
+import sample.java.rss.RSSReader;
 
 import java.net.URL;
 import java.util.*;

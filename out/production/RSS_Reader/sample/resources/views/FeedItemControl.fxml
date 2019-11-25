@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="139.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="139.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.resources.views.FeedItemControl_Controller">
    <children>
       <VBox prefHeight="193.0" prefWidth="431.0" HBox.hgrow="ALWAYS">
          <children>
             <HBox prefHeight="58.0" prefWidth="483.0">
                <children>
-                  <Label prefHeight="26.0" text="Kurva Fortnite" HBox.hgrow="NEVER">
+                  <Label fx:id="lbl_website" prefHeight="26.0" text="Kurva Fortnite" HBox.hgrow="NEVER">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -21,7 +21,7 @@
                      </padding>
                   </Label>
                   <Region prefHeight="25.0" prefWidth="70.0" HBox.hgrow="ALWAYS" />
-                  <Label alignment="CENTER_RIGHT" prefHeight="26.0" text="15 órája" HBox.hgrow="NEVER">
+                  <Label fx:id="lbl_date" alignment="CENTER_RIGHT" prefHeight="26.0" text="15 órája" HBox.hgrow="NEVER">
                      <padding>
                         <Insets right="20.0" />
                      </padding>
@@ -30,7 +30,7 @@
             </HBox>
             <HBox prefHeight="90.0" prefWidth="483.0">
                <children>
-                  <Label maxWidth="1.7976931348623157E308" prefHeight="55.0" prefWidth="483.0" text="ESL Lég of légs Premiership results recap - week four. Also die die die and die" wrapText="true" HBox.hgrow="ALWAYS">
+                  <Label fx:id="lbl_title" maxWidth="1.7976931348623157E308" prefHeight="55.0" prefWidth="483.0" text="ESL Lég of légs Premiership results recap - week four. Also die die die and die" wrapText="true" HBox.hgrow="ALWAYS">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -42,7 +42,7 @@
             </HBox>
             <HBox layoutX="10.0" layoutY="110.0" prefHeight="102.0" prefWidth="483.0">
                <children>
-                  <Label alignment="TOP_LEFT" lineSpacing="1.0" maxWidth="1.7976931348623157E308" prefHeight="103.0" prefWidth="483.0" text="Here is a quick recap of this evening's matches, brilliantly casted byESL regular Munchablies and Sessonbublé" wrapText="true" HBox.hgrow="ALWAYS">
+                  <Label fx:id="lbl_desc" alignment="TOP_LEFT" lineSpacing="1.0" maxWidth="1.7976931348623157E308" prefHeight="103.0" prefWidth="483.0" text="Here is a quick recap of this evening's matches, brilliantly casted byESL regular Munchablies and Sessonbublé" wrapText="true" HBox.hgrow="ALWAYS">
                      <padding>
                         <Insets left="20.0" right="20.0" top="2.0" />
                      </padding>

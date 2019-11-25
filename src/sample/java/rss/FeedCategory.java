@@ -1,4 +1,4 @@
-package rss;
+package sample.java.rss;
 
 import java.util.ArrayList;
 import java.util.List;

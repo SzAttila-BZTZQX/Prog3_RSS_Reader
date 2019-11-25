@@ -1,4 +1,4 @@
-package sample.java.controllers;
+package sample.resources.views;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,7 +8,7 @@ import sample.java.rss.FeedItem;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class FeedItemControl_Controller implements Initializable {
+public class FeedItemControl_Controller {
 
     @FXML
     public Label lbl_website;
@@ -25,15 +25,10 @@ public class FeedItemControl_Controller implements Initializable {
         updateGUI();
     }
 
-    private void updateGUI(){
+    private void updateGUI() {
         lbl_website.setText(websiteName);
         lbl_date.setText(feedItem.getPubDate().toString());
         lbl_title.setText(feedItem.getTitle());
         lbl_desc.setText(feedItem.getDescription());
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 }

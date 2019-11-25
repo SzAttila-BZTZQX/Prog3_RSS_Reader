@@ -1,6 +1,6 @@
 package sample.java.db;
 
-import rss.FeedCategory;
+import sample.java.rss.FeedCategory;
 
 import java.sql.*;
 import java.util.ArrayList;

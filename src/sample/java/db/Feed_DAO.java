@@ -1,7 +1,7 @@
 package sample.java.db;
 
-import rss.Feed;
-import rss.FeedCategory;
+import sample.java.rss.Feed;
+import sample.java.rss.FeedCategory;
 
 import java.sql.*;
 import java.util.ArrayList;
