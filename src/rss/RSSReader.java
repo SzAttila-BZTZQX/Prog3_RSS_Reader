@@ -63,7 +63,7 @@ public class RSSReader {
                         case ITEM:
                             if(isFeedHeader) {
                                 isFeedHeader = false;
-                                feed = new Feed(title, link, description);
+                                feed = new Feed(title, link, description, url.toString());
                             }
                             event = eventReader.nextEvent();
                             break;

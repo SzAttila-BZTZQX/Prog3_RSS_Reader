@@ -12,8 +12,8 @@ import java.util.*;
 public class Feed {
     private Integer id;
     private Integer categoryId;
-    private String feedCategory;
     private String favIconUrl;  // A feedhez csatolt kép URL címe
+    private String rssUrl;
     private ArrayList<FeedItem> feedItems = new ArrayList<>();
 
     // Kötelező
@@ -31,7 +31,17 @@ public class Feed {
 
     public Integer getCategoryId() { return categoryId; }
 
-    public void setCategoryId(int id) { this.categoryId = categoryId; }
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getRssUrl() {
+        return rssUrl;
+    }
+
+    public void setRssUrl(String rssUrl) {
+        this.rssUrl = rssUrl;
+    }
 
     public String getTitle() {
         return title;
@@ -80,10 +90,6 @@ public class Feed {
         }
     }
 
-    public String getFeedCategory() {return feedCategory;}
-
-    public void setFeedCategory(String feedCategory) { this.feedCategory = feedCategory;};
-
     public String getFavIconUrl() { return favIconUrl; }
 
     public void setFavIconUrl(String imageUrl) { this.favIconUrl = imageUrl; }
@@ -98,16 +104,18 @@ public class Feed {
     public Feed(){
     }
 
-    public Feed(String title, String link, String description){
+    public Feed(String title, String link, String description, String rssUrl){
         this.title = title;
         this.link = link;
         this.description = description;
+        this.rssUrl = rssUrl;
     }
 
-    public Feed(String title, String link, String description, Date pubDate) {
+    public Feed(String title, String link, String description, String rssUrl, Date pubDate) {
         this.title = title;
         this.link = link;
         this.description = description;
+        this.rssUrl = rssUrl;
         this.pubDate = pubDate;
 
         //Date date = feedItems.stream().max((p1, p2) -> (p1.getPubDate() - p2.getPubDate())).get();

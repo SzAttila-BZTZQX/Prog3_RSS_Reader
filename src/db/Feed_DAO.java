@@ -64,13 +64,14 @@ public class Feed_DAO {
 
     public static boolean insertFeed(Feed feed){
         try (Connection connection = DBConnector.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Feed VALUES (NULL, NULL, ?, ?, ?, ?, ?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Feed VALUES (NULL, NULL, ?, ?, ?, ?, ?, ?)");
 
             preparedStatement.setString(1, feed.getTitle());
             preparedStatement.setString(2, feed.getLink());
             preparedStatement.setString(3, feed.getDescription());
             preparedStatement.setString(4, feed.getPubDate().toString());
             preparedStatement.setString(5, feed.getFavIconUrl());
+            preparedStatement.setString(6, feed.getRssUrl());
             int i = preparedStatement.executeUpdate();
 
             if(i == 1){
@@ -84,13 +85,14 @@ public class Feed_DAO {
 
     public static boolean updateFeed(Feed feed) {
         try (Connection connection = DBConnector.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Feed SET Title=?, Link=?, Description=?, PubDate=?, FavIconUrl=? WHERE FeedID=" + feed.getId());
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Feed SET Title=?, Link=?, Description=?, PubDate=?, FavIconUrl=?, RssUrl=? WHERE FeedID=" + feed.getId());
 
             preparedStatement.setString(1, feed.getTitle());
             preparedStatement.setString(2, feed.getLink());
             preparedStatement.setString(3, feed.getDescription());
             preparedStatement.setString(4, feed.getPubDate().toString());
             preparedStatement.setString(5, feed.getFavIconUrl());
+            preparedStatement.setString(6, feed.getRssUrl());
             int i = preparedStatement.executeUpdate();
 
             if(i == 1){
@@ -143,6 +145,7 @@ public class Feed_DAO {
         feed.setDescription( resultSet.getString("Description") );
         feed.setPubDate( resultSet.getString("PubDate") );
         feed.setFavIconUrl( resultSet.getString("FavIconUrl"));
+        feed.setRssUrl( resultSet.getString("RssUrl"));
 
         return feed;
     }
