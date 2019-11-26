@@ -30,7 +30,7 @@ public class FeedCategory {
     }
 
     public void addFeeds(List<Feed> feeds) {
-        feeds.addAll(feeds);
+        this.feeds.addAll(feeds);
     }
 
 

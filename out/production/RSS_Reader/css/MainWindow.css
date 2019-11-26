@@ -2,11 +2,6 @@
     -fx-background-color: #484848;
 }
 
-.tree-view, .tree-cell, .button {
-    -fx-background-color: #484848;
-    -fx-text-fill: #ffffff;
-}
-
 .button:hover {
     -fx-background-color: #595959;
 }
@@ -29,6 +24,9 @@
     -fx-text-fill: black;
 }
 
+
+
+/* Tree View */
 .tree-view {
     -fx-font-size: 13px;
 }
@@ -48,13 +46,29 @@
     -fx-padding: 0.25em ;
 }
 
+.tree-view, .tree-cell, .button {
+    -fx-background-color: #484848;
+    -fx-text-fill: #ffffff;
+}
 
 
+
+/* Scroll Pane */
+.scroll-pane {
+    -fx-background-color: #dadada;  /* Enélkül border féle maradna a scrollpane körül */
+}
 
 .scroll-pane > .viewport {
     -fx-background-color: transparent;
 }
 
+.scroll-pane > .corner {
+    -fx-background-color: yellow;
+}
+
+
+
+/* Split Pane */
 .split-pane:horizontal > .split-pane-divider {
     -fx-background-color: #000000;
     -fx-padding: 1;
@@ -64,14 +78,9 @@
     -fx-background-color: #000000;
 }
 
-.scroll-pane {
-    -fx-background-color: #dadada;  /* Enélkül border féle maradna a scrollpane körül */
-}
 
-.scroll-pane > .corner {
-    -fx-background-color: yellow;
-}
 
+/* Scroll Bar */
 .scroll-bar:horizontal, .scroll-bar:vertical{
     -fx-background-color: transparent;  /* A scroll bar háttere */
 }

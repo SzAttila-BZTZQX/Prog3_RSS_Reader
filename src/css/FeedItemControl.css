@@ -3,15 +3,11 @@
     -fx-border-width: 0 0 1 0;
 }
 
-.hboxLight .rssTitle{
-    -fx-text-fill: #DADADA;
-}
-
 .hboxLightRead {
     -fx-background-color: #c2c2c2;
 }
 
-.hbox .label {
+.hboxLightRead .label {
     -fx-text-fill: #767676;
 }
 

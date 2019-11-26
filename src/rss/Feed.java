@@ -115,7 +115,7 @@ public class Feed {
 
     @Override
     public String toString() {
-        return title + ", " + link + "," + description + "," + pubDate;
+        return title + ", " + link + ", " + description + ", " + pubDate;
     }
 
     @Override
