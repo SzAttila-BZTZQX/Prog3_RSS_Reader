@@ -5,7 +5,9 @@ import rss.FeedCategory;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /** Feed Data Acces Object */
 
@@ -26,12 +28,12 @@ public class Feed_DAO {
         return null;
     }
 
-    public static List<Feed> getAllFeed(){
+    public static HashSet<Feed> getAllFeed(){
         try (Connection connection = DBConnector.getConnection()) {
             try (Statement statement = connection.createStatement()) {
                 ResultSet resultSet = statement.executeQuery("SELECT * FROM Feed");
 
-                List<Feed> feeds = new ArrayList<>();
+                HashSet<Feed> feeds = new HashSet<>();
                 while(resultSet.next()){
                     Feed feed = getFeedFromResultSet(resultSet);
                     feeds.add(feed);

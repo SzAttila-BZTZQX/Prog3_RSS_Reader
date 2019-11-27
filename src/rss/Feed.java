@@ -129,7 +129,26 @@ public class Feed {
     }
 
     @Override
+    public int hashCode() {
+        return link.hashCode();
+    }
+
+    @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if(obj == this){
+            return true;
+        }
+        if(obj == null){
+            return false;
+        }
+        if(getClass() != obj.getClass()){
+            return false;
+        }
+        Feed other = (Feed)obj;
+        if(this.link == other.link){
+            return true;
+        }
+
+        return false;
     }
 }

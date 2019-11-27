@@ -52,7 +52,8 @@
                <top>
                   <VBox prefHeight="171.0" prefWidth="350.0" styleClass="left-menu" BorderPane.alignment="CENTER">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="43.0" prefWidth="354.0" style="-fx-border-color: #000000; -fx-border-width: 0 0 1 0;" text="+ Feed Hozzáadása">
+                        <TextField fx:id="txtFieldAddFeed" disable="true" maxHeight="-Infinity" minHeight="-Infinity" onAction="#txtFieldAddFeed_OnAction" prefHeight="0.0" />
+                        <Button fx:id="btnAddFeed" alignment="CENTER" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#btnAddFeed_Clicked" prefHeight="50.0" prefWidth="354.0" style="-fx-border-color: #000000; -fx-border-width: 0 0 1 0;" text="+ Feed Hozzáadása">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
