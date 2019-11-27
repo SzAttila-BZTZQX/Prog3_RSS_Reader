@@ -90,6 +90,7 @@ public class RSSReader {
                         item.setDescription(description);
                         item.setLink(link);
                         item.setPubDate(pubDate);
+                        item.setContent(content);
                         feed.addFeedItem(item);
 
                         event = eventReader.nextEvent();
@@ -164,6 +165,7 @@ public class RSSReader {
                         item.setDescription(description);
                         item.setLink(link);
                         item.setPubDate(pubDate);
+                        item.setContent(content);
                         //feed.addFeedItem(item);
                         result.add(item);
 
