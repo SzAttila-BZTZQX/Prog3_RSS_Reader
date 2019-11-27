@@ -5,6 +5,7 @@ module RSS.Reader {
     requires java.xml;
     requires java.sql;
     requires org.jsoup;
+    requires javafx.web;
 
     opens sample;
 }

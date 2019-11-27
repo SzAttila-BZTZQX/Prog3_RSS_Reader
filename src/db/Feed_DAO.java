@@ -62,6 +62,24 @@ public class Feed_DAO {
         return null;
     }
 
+    public static List<Feed> getAllFeedWithoutCategory(){
+        try(Connection connection = DBConnector.getConnection()) {
+            try (Statement statement = connection.createStatement()) {
+                ResultSet resultSet = statement.executeQuery("SELECT * FROM Feed WHERE CategoryID IS NULL");
+
+                List<Feed> feeds = new ArrayList<>();
+                while(resultSet.next()){
+                    Feed feed = getFeedFromResultSet(resultSet);
+                    feeds.add(feed);
+                }
+                return feeds;
+            }
+        } catch (SQLException ex){
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
     public static boolean insertFeed(Feed feed){
         try (Connection connection = DBConnector.getConnection()) {
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Feed VALUES (NULL, NULL, ?, ?, ?, ?, ?, ?)");

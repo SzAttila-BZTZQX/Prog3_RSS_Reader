@@ -100,6 +100,8 @@ public class Feed {
 
     public void addFeedItem(FeedItem feedItem) { this.feedItems.add(feedItem); }
 
+    public void addFeedItems(List<FeedItem> feedItem) { this.feedItems.addAll(feedItem); }
+
 
     public Feed(){
     }
@@ -123,7 +125,7 @@ public class Feed {
 
     @Override
     public String toString() {
-        return title + ", " + link + ", " + description + ", " + pubDate;
+        return title;
     }
 
     @Override
